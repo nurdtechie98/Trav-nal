@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travnal</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="icon" href="/images/paper-plane.png">
+        <script>
+            function backAway(){
+                //if it was the first page
+                if(history.length === 1){
+                   // window.location = "http://www.mysite.com/"
+                } else {
+                    history.back();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>    
+                    </button>                  
+                    <a class="navbar-brand brand" href="#">Travnal</a>
+                    <img class="logo-image" src="/images/paper-plane.png">
+                </div>
+               
+            </div>
+        </nav>
+        <div class="container">
+                
+            <div class="col-md-4"></div>
+            <div class="col-md-4 setprofile login">
+                <div class="row">
+                    <!--<img src="assets/paper-plane.png" class="logo-image">-->
+                    <h2 class="signin-text">Create Profile</h2>
+                </div>
+                <form action="" method="post">
+                    <h4>Name</h4>
+                    <input type="text" class="form-control" placeholder="JohnDoe" required>
+                    <br>
+                    <h4>Username</h4>
+                    <input type="text" class="form-control" placeholder="johndoe368" required>
+                    <br>
+                    <h4>Website/Blog</h4>
+                    <input type="text" class="form-control" placeholder="rj.blogspot.in" required>
+                    <br>
+                    <h4>Bio</h4>
+                    <input type="text" class="form-control" placeholder="Write something interesting about you" required>
+                    <br><br>
+                    <h4>Phone Number</h4>
+                    <input type="text" class="form-control" placeholder="9619073040" required>
+                    <br><br>
+                    <h4>Gender</h4>
+                    <select class="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br><br>
+                    <h4>Birthdate</h4>
+                    <input type="date" name="birthday" required>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary signup">Create</button>
+                    <br><br>
+                </form>
+                <button onClick="backAway()" class="btn btn-primary">Cancel</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>    
+        <br>
+        <div class="footer">
+            Developed with ❤ by trotters at DJMB
+        </div>
+    </body>
+</html>

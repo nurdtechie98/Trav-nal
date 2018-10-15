@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travnal</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="icon" href="/images/paper-plane.png">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand brand" href="#">Travnal</a>
+                    <img class="logo-image" src="/images/paper-plane.png">
+                </div>
+                <div class="navbar-right collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="<%= feedname %>">Feed</a></li>
+                        <li><a href="<%= timelinename %>">Trips</a></li>
+                        <li class="active"><a href="#">Profile</a></li>
+                        <li><a href="/create"> Edit Profile</a></li> <!--for that user IF-->
+                        <li> <a href="/logout"> Logout </a></li>
+                    </ul>
+                    <a href="#"><img src="<%= profileimage %>" alt="John Doe" class="profile-img"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="profile-container">
+            <div class="col-md-4" id="profile-thumb-sec">
+                <section class="profile">
+                    <header class="header">
+                        <div class="details">
+                            <img src=<%= profileimage %> alt="John Doe" class="profile-pic">
+                            <h1 class="heading"> <%= name %></h1>
+                            <div class="location">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12 ,2Z"></path>
+                                </svg>
+                                <p><%= location %></p> <!--idhar location needed-->
+                            </div>
+                            <div class="stats">
+                                <div class="col-4">
+                                <h4><%= noposts %></h4> <!--no of posts count required-->
+                                <p>Posts</p>
+                                </div>
+                                <div class="col-4">
+                                <h4><%= nofollowing %></h4> <!-- no of following -->
+                                <p>Following</p>
+                                </div>
+                                <div class="col-4">
+                                <h4><%= nofollower %></h4> <!-- no of followers -->
+                                <p>Followers</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary"> Follow Me </button> <!--if and add this to db-->
+                        </div>
+                        
+                    </header>
+                </section>
+            </div>
+            <div class="col-md-8" id="profile-feed-sec">
+                <section class="section">
+                    <div class="grid">
+                        <% for(var i=0; i<posts.length; i++) {%>
+                                <div class="item <%= posts[i].class%>">
+                                       <a href="/timeline/<%= name %>/<%= posts[i].post %>">
+                                    <div class="item__details">  
+                                        <%= posts[i].post %>
+                                    </div>
+                                </a>
+                                </div>
+                        <%} %>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            Developed with ❤ by trotters at DJMB
+        </div>
+    </body>
+</html>

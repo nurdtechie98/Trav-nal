@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travnal</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="icon" href="/images/paper-plane.png">
+</head>
+<body>
+    <div class="brand row">
+        <h1>Travnal<img class="logo-image" src="/images/paper-plane.png"></h1>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-md-1"></div>            
+            <div class="col-md-4 login signin">
+                <div class="row">
+                    <h2 class="signin-text">Log In</h2>
+                </div>
+                <form action="/login" method="POST">
+                    <h3>Username</h3>
+                    <input name="username" type="text" class="form-control" placeholder="JohnDoe">
+                    <br>
+                    <h3>Password</h3>
+                    <input name="password" type="password" class="form-control" placeholder="Password">
+                    <br><br>
+                    <button type="submit" class="btn btn-primary signup" >Login</button>
+                    <br><br>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4 login">
+                <div class="row">
+                    <h2 class="signin-text">Sign Up</h2>
+                </div>
+                <form action="/signup" method="POST">
+                    <h3>Username</h3>
+                    <input type="text" name="username" class="form-control" placeholder="JohnDoe">
+                    <br>
+                    <h3>Email</h3>
+                    <input type="email" name="email" class="form-control" placeholder="johndoe368@gmail.com">
+                    <br>
+                    <h3>Password</h3>
+                    <input type="password" name="password" class="form-control" placeholder="password">
+                    <br>
+                    <h3>Confirm Password</h3>
+                    <input type="text" name="cpassword" class="form-control" placeholder="password">
+                    <br><br>
+                    <button type="submit" class="btn btn-primary signup">Sign Up</button>
+                    <br><br>
+                </form>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="footer">
+        Developed with ❤ by trotters at DJMB
+    </div>
+</body>
+</html>

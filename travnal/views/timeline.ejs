@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travnal</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/timeline.css">
+        <link rel="icon" href="/images/paper-plane.png">
+        <script src="/javascripts/timeline.js"></script>
+        <script src="http://localhost:3001/socket.io/socket.io.js"></script>
+         <script>
+                              var socket = io.connect('http://localhost:3001');
+                              
+                          var x = document.getElementById("demo");
+
+                          function getLocation() {
+                          if (navigator.geolocation) {
+                          navigator.geolocation.getCurrentPosition(showPosition,function(){},{enableHighAccuracy:true});
+                          } else { 
+                          x.innerHTML = "Geolocation is not supported by this browser.";
+                          }
+                          }
+
+                          function showPosition(position) {
+                          console.log(`lat is: ${position.coords.latitude}`);
+                          console.log(`long is: ${position.coords.longitude}`);
+                          console.log(`accuracy is: ${position.coords.accuracy}`)
+                          socket.emit('for_server', position.coords.latitude,position.coords.longitude);    
+
+                                      socket.on('for_client',function(locname){
+                                          document.getElementById('demo').innerHTML= locname;});
+                                      }
+                          </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand brand" href="#">Travnal</a>
+                    <img class="logo-image" src="/images/paper-plane.png">
+                </div>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<%= feedname %>">Feed</a></li>
+                        <li class="active"><a href="#">Trips</a></li>
+                        <li><a href="<%= profilename %>">Profile</a></li>
+                        <li> <a href="/logout"> Logout </a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" action="/action_page">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+        <section class="intro">
+            <div class="container">
+              <h1>Trip to Goa</h1>
+            </div>
+          </section>
+          
+          <section class="timeline">
+            <ul>
+              <li>
+                <div>
+                  <time>1934</time> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1946</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1956</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1957</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1967</time> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1977</time> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1985</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>2000</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+            </ul>
+          </section>
+          <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-places/512/pin_plus-512.png" class="add-icon"  data-toggle="modal" data-target="#myModal">
+          <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add the location</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form  method="post" align="center">
+                        
+                          <p id="demo"></p>
+                          <h4>Location Title</h4>
+                          <input type="text" class="form-control" placeholder="This Location!" required>
+                          <br>
+                          <input type="textarea" class="form-control" name="summary">
+                          <br>
+                          <input type="file" accept="image/*" capture required>
+                          <br><br>
+                          <!--add action-->
+                      </form>
+                      <button onclick="getLocation()">Mark My location</button> <!--bug here-->
+                  </div>
+                   <div class="modal-footer">
+        <button type="button" class="btn btn-default" formaction="" >add your location</button>
+      </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          
+          <div class="footer">
+            Developed with ❤ by trotters at DJMB
+        </div>
+          <script src="/javascripts/timeline.js"></script>
+</body>
+</html>
