@@ -71,7 +71,7 @@ router.post('/create',function(req, res,next) {
     collection.update({username:username},user);
   });
   
-  res.redirect("/profile");
+  res.redirect("/profile/"+username);
 });
 
 router.get('/feed',checkSignIn,function(req, res) {

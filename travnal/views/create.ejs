@@ -45,19 +45,22 @@
                 </div>
                 <form action="" method="post">
                     <h4>Name</h4>
-                    <input type="text" class="form-control" placeholder="JohnDoe" required>
+                    <input type="text" name="mane" class="form-control" placeholder="JohnDoe" required>
                     <br>
                     <h4>Username</h4>
-                    <input type="text" class="form-control" placeholder="johndoe368" required>
+                    <input type="text" class="form-control" value=<%= username %> readonly>
                     <br>
                     <h4>Website/Blog</h4>
-                    <input type="text" class="form-control" placeholder="rj.blogspot.in" required>
+                    <input type="text" name="website" class="form-control" placeholder="rj.blogspot.in" required>
                     <br>
                     <h4>Bio</h4>
-                    <input type="text" class="form-control" placeholder="Write something interesting about you" required>
+                    <input type="text" name="bio" class="form-control" placeholder="Write something interesting about you" required>
+                    <br><br>
+                    <h4>City</h4>
+                    <input type="text" name="home_city" class="form-control" required>
                     <br><br>
                     <h4>Phone Number</h4>
-                    <input type="text" class="form-control" placeholder="9619073040" required>
+                    <input type="text" name="phone" class="form-control" placeholder="9619073040" required>
                     <br><br>
                     <h4>Gender</h4>
                     <select class="gender">
