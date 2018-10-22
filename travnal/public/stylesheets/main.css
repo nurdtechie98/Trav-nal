@@ -74,6 +74,10 @@ body{
     margin-top: 12%;
 }
 
+.newtrip{
+  margin-top:5%;
+}
+
 .signin-text{
     margin: 0;
     margin-top: 10px;
@@ -202,16 +206,16 @@ body{
     counter-increment: item-counter;
   }
   .item:nth-of-type(1n) {
-    background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
+    background-image: url("https://wildwestcomms.co.uk/wp-content/uploads/2017/02/air-760325_960_720-1.jpg");
   }
   .item:nth-of-type(2n) {
-    background-image: url("https://images.unsplash.com/photo-1490914327627-9fe8d52f4d90?dpr=2&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=");
+    background-image: url("https://cdn.cliqueinc.com/cache/posts/90692/instagram-travel-photos-90692-1493336251337-main.700x0c.jpg");
   }
   .item:nth-of-type(3n) {
-    background-image: url("https://images.unsplash.com/photo-1476097297040-79e9e1603142?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+    background-image: url("https://assets.blog.hgtv.ca/wp-content/hgtv-wp/2017/05/canadian-instagram-travel.jpg");
   }
   .item:nth-of-type(4n) {
-    background-image: url("https://images.unsplash.com/photo-1464652149449-f3b8538144aa?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+    background-image: url("https://trekbible.com/wp-content/uploads/2018/06/33559569_467946226970652_7668148028032679936_n.jpg");
   }
   .item:after {
     content: '';
@@ -280,4 +284,16 @@ body{
 
 .signup{
     width:50%;
+}
+
+.modal{
+  z-index: 1100;
+}
+
+.startup-text{
+  text-align: center;
+}
+
+.date{
+  color: #000;
 }

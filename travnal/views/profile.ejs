@@ -26,12 +26,12 @@
                 <div class="navbar-right collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li ><a href="<%= feedname %>">Feed</a></li>
-                        <li><a href="<%= timelinename %>">Trips</a></li>
-                        <li class="active"><a href="#">Profile</a></li>
+                        <!--<li><a href="<%= timelinename %>">Trips</a></li>-->
+                        <li class="active"><a href="<%= profile %>">Profile</a></li>
                         <li><a href="/create"> Edit Profile</a></li> <!--for that user IF-->
                         <li> <a href="/logout"> Logout </a></li>
                     </ul>
-                    <a href="#"><img src="<%= profileimage %>" alt="John Doe" class="profile-img"></a>
+                    <!--<a href="#"><img src="<%= profileimage %>" alt="John Doe" class="profile-img"></a>-->
                 </div>
             </div>
         </nav>
@@ -62,7 +62,13 @@
                                 <p>Followers</p>
                                 </div>
                             </div>
-                            <button class="btn btn-primary"> Follow Me </button> <!--if and add this to db-->
+                            <br><br>
+                            <% if(show==0){ %>
+                                    <a href="/follow/<%= name %>"><button class="btn btn-primary"> Follow Me </button></a> <!--if and add this to db-->
+                            <% } %>
+                            <% if(show==1){ %>
+                            <a href="/new-trip"><button class="btn btn-primary"> Create Trip </button></a> <!--if and add this to db-->
+                            <% } %>
                         </div>
                         
                     </header>
@@ -71,15 +77,21 @@
             <div class="col-md-8" id="profile-feed-sec">
                 <section class="section">
                     <div class="grid">
-                        <% for(var i=0; i<posts.length; i++) {%>
-                                <div class="item <%= posts[i].class%>">
-                                       <a href="/timeline/<%= name %>/<%= posts[i].post %>">
-                                    <div class="item__details">  
-                                        <%= posts[i].post %>
+                        <% if(posts.length>0) {%>
+                            <% for(var i=0; i<posts.length; i++) {%>
+                                    <div class="item <%= posts[i].class%>">
+                                        <a href="/trip/<%= name %>/<%= posts[i].idt %>">
+                                        <div class="item__details">  
+                                        <b> <%= posts[i].tripname %> </b>
+                                        <br>
+                                        <%= posts[i].decription %>
+                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                                </div>
-                        <%} %>
+                            <% } %>
+                        <% } else{ %>
+                            <h3>No posts yet!</h3>
+                        <% } %>
                     </div>
                 </section>
             </div>

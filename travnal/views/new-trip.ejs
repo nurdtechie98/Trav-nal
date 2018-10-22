@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travnal</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/timeline.css">
+        <link rel="icon" href="/images/paper-plane.png">
+        <script src="/javascripts/timeline.js"></script>
+        <script src="http://localhost:3001/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand brand" href="#">Travnal</a>
+                    <img class="logo-image" src="/images/paper-plane.png">
+                </div>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/feed">Feed</a></li>
+                        <li class="active"><a href="#">Trips</a></li>
+                        <li><a href="<%= profilename %>">Profile</a></li>
+                        <li> <a href="/logout"> Logout </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="row">
+                <h2 class="startup-text">Lets start a new trip <%= name %> ! </h2>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4 login signin newtrip">
+                <form action="/new-trip" method="POST">
+                    <h3>Trip Name</h3>
+                    <input name="tripname" type="text" class="form-control" placeholder="Vacation to Goa">
+                    <br>
+                    <h3>Start Date</h3>
+                    <input name="date" type="text" class="form-control" placeholder="16/04/2018">
+                    <br><br>
+                    <h3>Description</h3>
+                    <input name="description" type="text" class="form-control" placeholder="My roadtrip trip to goa with my friends">
+                    <br><br>
+                    <button type="submit" class="btn btn-primary signup" >Start Trip</button>
+                    <br><br>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+          <div class="footer">
+            Developed with ❤ by trotters at DJMB
+          </div>
+          <script src="/javascripts/timeline.js"></script>
+</body>
+</html>

@@ -174,3 +174,7 @@ time {
   align-content:flex-end;
   cursor: pointer;
 }
+
+.modal{
+  color: black;
+}

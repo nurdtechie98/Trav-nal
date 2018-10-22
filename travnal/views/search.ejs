@@ -32,7 +32,7 @@
                     <!--<li><a href="<%= timelinename %>">Trips</a></li>-->
                     <li ><a href="<%= profilename %>">Profile</a></li>
                     <li> <a href="/logout"> Logout </a></li>
-                    <form class="navbar-form navbar-left" action="/search" method="POST">
+                    <form class="navbar-left" action="/search" method="POST">
                         <input type="text" name="search_value" class="form-control" placeholder="Search">
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -48,7 +48,7 @@
                         <% if(posts.length>0) {%>
                             <% for(var i=0; i<posts.length; i++) {%>
                                     <div class="item <%= posts[i].class%>">
-                                        <a href="/trip/<%= posts[i].username %>/<%= posts[i].idt %>">
+                                        <a href="/trip/<%= name %>/<%= posts[i].idt %>">
                                         <div class="item__details">  
                                         <b> <%= posts[i].tripname %> </b>
                                         <br>
