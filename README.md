@@ -30,7 +30,7 @@
 - Mark your location real time and express what you feel like
 - Browse across your feeds
 - Search for required locations and trips others have made
-- Follow people, get followed by other
+- Follow people, get followed by others
 
 ------------------------------------------
 <div align="center">
@@ -64,7 +64,7 @@
         $ npm start
 ```
 
-* Start your browser you are ready to go 
+* Start your browser to localhost:3000 and you are ready to go 
 
 ------------------------------------------
 ### Contributing
@@ -80,7 +80,7 @@
 ------------------------------------------
 ### Contributors
 
-- [@nurdtechie98](https://github.com/shivam1708)
+- [@nurdtechie98](https://github.com/nurdtechie98)
 - [@raj-vora](https://github.com/raj-vora)
 - [@aniketp319](https://github.com/aniketp319)
 
